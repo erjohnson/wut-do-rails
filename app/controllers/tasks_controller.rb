@@ -22,4 +22,9 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     render('tasks/show.html.erb')
   end
+
+  def edit
+    @task = Task.find(params[:id])
+    render('tasks/edit.html.erb')
+  end
 end
