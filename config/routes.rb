@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   match('tasks/new', {:via => :get, :to => 'tasks#new'})
   match('tasks', {:via => :post, :to => 'tasks#create'})
   match('tasks/:id', {:via => :get, :to => 'tasks#show'})
+  match('tasks/:id/edit', {:via => :get, :to => 'tasks#edit'})
 end
