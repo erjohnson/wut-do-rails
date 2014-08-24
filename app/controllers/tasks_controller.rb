@@ -27,4 +27,13 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     render('tasks/edit.html.erb')
   end
+
+  def update
+    @task = Task.find(params[:id])
+    if @task.update(params[:task])
+      render('tasks/success.html.erb')
+    else
+      render('tasks/edit.html.erb')
+    end
+  end
 end
