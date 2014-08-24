@@ -38,8 +38,8 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(task[:id])
+    @task = Task.find(params[:id])
     @task.destroy
-    render ('tasks/destroy.html.erb')
+    render('tasks/destroy.html.erb')
   end
 end
