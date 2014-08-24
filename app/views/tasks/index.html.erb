@@ -8,7 +8,8 @@
 
 <h2>New Task</h2>
 
-<% if @task.errors.any? %>
+
+<% if @task !=nil && @task.errors.any? %>
   <h3>Please fix these errors:</h3>
   <ul>
     <% @task.errors.full_messages.each do |message| %>
@@ -19,6 +20,6 @@
 
 <form action="/tasks" method="post">
   <label for="task_name">Name</label>
-  <input id="task_name" name="name" type="text" value="<%= @task.name %>">
+  <input id="task_name" name="name" type="text">
   <button>Create Task</button>
 </form>
