@@ -4,12 +4,17 @@ class TasksController < ApplicationController
     render('tasks/index.html.erb')
   end
 
+  def new
+    @task = Task.new
+    render('tasks/new.html.erb')
+  end
+
   def create
     @task = Task.new(params[:task])
     if @task.save
       render('tasks/success.html.erb')
     else
-      render('tasks/index.html.erb')
+      render('tasks/new.html.erb')
     end
   end
 end
